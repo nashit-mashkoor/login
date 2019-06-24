@@ -7,7 +7,7 @@
   <%= link_to 'Log Out', logout_path %>
   <p id=”notice”><%= notice %></p>
 <h1>Example</h1>
-<p>Lorem ipsum …</p>
+<p>You can do what you wnat</p>
 <table>
   <thead>
     <tr>
@@ -17,13 +17,10 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+
+    <td><%= current_user.email %></td>
+    <td><%= link_to 'Edit', edit_user_path(current_user) %></td>
+    <td><%= link_to 'Destroy', current_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tbody>
 </table>
 <% else %>
